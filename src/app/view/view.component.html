@@ -1,1 +1,22 @@
-<p>view works!</p>
+
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel *ngFor="let event of events">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{event.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+            {{event.type}}
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+
+
+        <mat-list cdkDropList class="example-list" (cdkDropListDropped)="drop($event, event.leaderboard, event)">
+            <mat-list-item class="example-box" *ngFor="let team of event.leaderboard" cdkDrag>{{team.name}}</mat-list-item>
+            <br>
+            <button mat-raised-button (click)="addTeam(event)">Add Team to Event</button>
+        </mat-list>
+    
+    </mat-expansion-panel>
+</mat-accordion>
+

@@ -7,6 +7,7 @@ const dotenv = require("dotenv")
 dotenv.config()
 
 const eventsRoute = require('./routes/events')
+const teamsRoute = require('./routes/teams')
 
 mongoose.connect(process.env.DATABASE_URL)
     .then(()=>{
@@ -22,12 +23,13 @@ app.use(bodyParser.json())
 app.use((req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', "*");
     res.setHeader('Access-Control-Allow-Headers', "Origin, X-request-with, Content-Type, Accept");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS")
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS, PUT")
     next();
 })
 
 
 app.use("/api/events", eventsRoute);
+app.use("/api/teams", teamsRoute);
 
 app.use((req, res, next)=>{
     res.send('nada')

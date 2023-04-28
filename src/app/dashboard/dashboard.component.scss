@@ -1,0 +1,14 @@
+*{
+    display: flex;
+    margin: auto;
+}
+div{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+}
+@media screen and (min-width: 750px) {
+    div {
+        display: flow-root;
+    }
+}

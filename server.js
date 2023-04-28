@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000
 const onListening = () =>{
     const addr = server.address();
     const bind = typeof addr === "string"? "pipe " + addr: "port "+ port;
-    debug("listening on "+ bind)
+    console.log("listening on "+ bind)
 }
 app.set('port', port)
 const server = http.createServer(app)

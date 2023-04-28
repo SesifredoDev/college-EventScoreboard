@@ -1,8 +1,11 @@
 const mongoose = require("mongoose")
 
 const postSchema = mongoose.Schema({
-    title: {type: String, required: true},
-    content: {type: String}
+    name: {type: String, required: true},
+    type:{type: String, required: true},
+    max:{type: Number, required: true},
+    subtraction:{type: Number, required: true},
+    leaderboard: {type: Array, required: false}
 })
 
-module.exports = mongoose.model('Post', postSchema)
+module.exports = mongoose.model('event', postSchema)

@@ -1,0 +1,21 @@
+mat-card{
+    width: 40vw;
+    margin:auto;
+}
+.formField{
+    width: 96%;
+    margin:2% ; 
+}
+.formNumber{
+    width: 30%;
+    position: relative;
+    margin-left: 10%;
+}
+button{
+    width: 100%;
+}
+@media screen and (min-width: 750px) {
+    mat-card{
+        width: 80vw;
+    }
+ }

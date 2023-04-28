@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Team Form</mat-card-title>
+    </mat-card-header>
+    <form  #form="ngForm">
+        <mat-form-field class="formField" floatLabel="auto">
+            <mat-label>Team Name</mat-label>
+            <input matInput name="name" required  ngModel>
+        </mat-form-field>
+        
+        <mat-form-field class="formField" floatLabel="auto" *ngFor="let name of names; let i = index">
+            <mat-label>Member {{i+1}}</mat-label>
+            <input matInput #name="ngModel" [(ngModel)]="name.name"  name="value{{i}}">
+        </mat-form-field>
+        <button mat-raised-button style="float:right; width: 30%;" color="accent" (click)="addMember()">Add Team Member</button>
+        <button mat-raised-button color="primary" (click)="formSubmit(form)" >Add Team</button>
+    </form>
+</mat-card>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RunEventFormComponent } from './run-event-form.component';
+import { AddTeamBoxComponent } from './add-team-box.component';
 
-describe('RunEventFormComponent', () => {
-  let component: RunEventFormComponent;
-  let fixture: ComponentFixture<RunEventFormComponent>;
+describe('AddTeamBoxComponent', () => {
+  let component: AddTeamBoxComponent;
+  let fixture: ComponentFixture<AddTeamBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RunEventFormComponent ]
+      declarations: [ AddTeamBoxComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RunEventFormComponent);
+    fixture = TestBed.createComponent(AddTeamBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
