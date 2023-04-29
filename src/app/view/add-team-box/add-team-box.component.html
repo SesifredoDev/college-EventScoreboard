@@ -1,1 +1,9 @@
-<p>add-team-box works!</p>
+<mat-card>
+    <button mat-raised-button color="warn">X</button>
+    <form #form="ngForm">
+        <section class="example-section">
+            <p><mat-checkbox color="primary"  (change)="onLeaderboardCheck($event)" class="teamCheck" *ngFor="let team of leaderboard" [value]="team">{{team.name}}</mat-checkbox></p>
+            <p><mat-checkbox color="primary"  (change)="onselectedCheck($event)" class="teamCheck" *ngFor="let team of unselectedTeams" [value]="team">{{team.name}}</mat-checkbox></p>
+        </section>
+    </form>
+</mat-card>

@@ -46,7 +46,7 @@ export class ViewComponent implements OnInit{
   }
   addTeam(event: Event){
       const dialogRef = this.dialog.open(AddTeamBoxComponent, {
-        data: event,
+        data: {event:event, teams:this.teams},
       });
   
       dialogRef.afterClosed().subscribe(result => {

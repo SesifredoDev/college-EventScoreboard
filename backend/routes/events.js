@@ -38,7 +38,6 @@ router.put("/", (req, res, next) =>{
     event.updateOne({_id:req.body.id}, updatedEvent)
             .then((data)=>{
                 res.json({message:'CONFIRM Edited Event'});
-                console.log(data)
             })
             .catch((err)=>[
                 res.json({
