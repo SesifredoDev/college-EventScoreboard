@@ -10,6 +10,12 @@ router.get("/", (req,res,next) => {
                 data: documents
             })
         })
+        .catch((err)=>{
+            res.json({
+                message:"FAIL",
+                err: err.message
+            })
+        })
   })
 
 
@@ -32,6 +38,7 @@ router.post("/", (req, res, next) =>{
             })
         })
 })
+
 router.put("/", (req, res, next) =>{
     console.log("put request activated")
     updatedEvent = req.body.event

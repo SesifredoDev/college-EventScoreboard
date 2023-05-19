@@ -10,6 +10,12 @@ router.get("/", (req,res,next) => {
                 data: documents
             })
         })
+        .catch((err)=>{
+            res.json({
+                message:"FAIL",
+                err: err.message
+            })
+        })
   })
 router.post("/", (req, res, next) =>{
     var newTeam = new user({

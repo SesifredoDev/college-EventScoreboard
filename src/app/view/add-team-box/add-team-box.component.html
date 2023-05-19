@@ -1,9 +1,24 @@
 <mat-card>
-    <button mat-raised-button color="warn">X</button>
-    <form #form="ngForm">
-        <section class="example-section">
-            <p><mat-checkbox color="primary"  (change)="onLeaderboardCheck($event)" class="teamCheck" *ngFor="let team of leaderboard" [value]="team">{{team.name}}</mat-checkbox></p>
-            <p><mat-checkbox color="primary"  (change)="onselectedCheck($event)" class="teamCheck" *ngFor="let team of unselectedTeams" [value]="team">{{team.name}}</mat-checkbox></p>
-        </section>
-    </form>
+    <button mat-raised-button (click)="submit()" color="lime">Submit</button>
+
+            <div
+        cdkDropList
+        #unselectedList="cdkDropList"
+        [cdkDropListData]="leaderboard"
+        [cdkDropListConnectedTo]="[leaderboardList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of leaderboard" cdkDrag>{{item.name}}</div>
+    </div>
+
+    <div
+        cdkDropList
+        #leaderboardList="cdkDropList"
+        [cdkDropListData]="unselectedTeams"
+        [cdkDropListConnectedTo]="[unselectedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of unselectedTeams" cdkDrag>{{item.name}}</div>
+    </div>
+
 </mat-card>

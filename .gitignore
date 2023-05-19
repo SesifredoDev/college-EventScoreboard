@@ -43,3 +43,6 @@ Thumbs.db
 
 # sensitive Data
 /.env
+frontend-darwin-x64
+
+./frontend-darwin-x64
